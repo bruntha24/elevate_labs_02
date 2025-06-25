@@ -1,0 +1,273 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #3b0a25;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  background: #4c0d2a;
+  padding: 20px 0;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f9d5d3;
+  flex: 1;
+  text-align: left;
+}
+.nav {
+  flex: 1;
+  text-align: right;
+}
+.nav-links {
+  list-style: none;
+  display: inline-flex;
+  gap: 25px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #f9d5d3;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(rgba(59,10,37,0.7), rgba(59,10,37,0.9)), url('https://source.unsplash.com/1600x900/?wine') no-repeat center/cover;
+  padding: 100px 20px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #f9d5d3;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #fddde6;
+}
+.btn {
+  background-color: #b11226;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background-color: #d63242;
+}
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ABOUT SECTION */
+.about-section {
+  background: #4c0d2a;
+  padding: 60px 20px;
+  color: #fff;
+}
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+.about-text {
+  flex: 1;
+}
+.about-text h2 {
+  margin-bottom: 15px;
+  color: #fddde6;
+}
+.about-text ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.about-img {
+  flex: 1;
+}
+.about-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+  background: #3b0a25;
+  padding: 60px 20px;
+  text-align: center;
+}
+.section-title {
+  color: #f9d5d3;
+  margin-bottom: 40px;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.project-card {
+  background: #4c0d2a;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: scale(1.05);
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+.project-card h3 {
+  padding: 15px;
+  color: #fddde6;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  background: #4c0d2a;
+  padding: 60px 20px;
+  text-align: center;
+}
+.contact-section h2 {
+  color: #fddde6;
+  margin-bottom: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+input, textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+input:focus, textarea:focus {
+  outline: 2px solid #f9d5d3;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #3b0a25;
+  padding: 20px 0;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.social-links a {
+  font-size: 1.5rem;
+  margin: 0 8px;
+  color: #f9d5d3;
+  transition: transform 0.3s;
+}
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1.3s ease-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo {
+    text-align: left;
+    width: 100%;
+  }
+  .nav {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
